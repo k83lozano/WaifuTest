@@ -1,0 +1,123 @@
+{
+    "Questions": [
+        {
+            "question": "¿A qué lugar ficticio te gustaría ir?",
+            "answers": [
+                {
+                    "answer": "La Fábrica de Willy Wonka"
+                },
+                {
+                    "answer": "Fondo de Bikini"
+                },
+                {
+                    "answer": "La Tierra Media"
+                },
+                {
+                    "answer": "Tlaxcala"
+                }
+            ]            
+        },
+        {
+            "question": "Si pudieras invitarle unos tacos a un personaje famoso, a quién sería?",
+            "answers": [
+                {
+                    "answer": "Zendaya"
+                },
+                {
+                    "answer": "Genghis Khan"
+                },
+                {
+                    "answer": "Chabelo"
+                },
+                {
+                    "answer": "Elvis Presley"
+                }
+            ]           
+        },
+        {
+            "question": "Mole favorito",
+            "answers": [
+                {
+                    "answer": "Poblano"
+                },
+                {
+                    "answer": "Negro"
+                },
+                {
+                    "answer": "Amarillo"
+                },
+                {
+                    "answer": "Xico"
+                }
+            ]            
+        },
+        {
+            "question": "¿Cuando vas por un elote o esquite eliges, chile del que pica o del que no pica?",
+            "answers": [
+                {
+                    "answer": "Del que pica"
+                },
+                {
+                    "answer": "Del que no pica"
+                },
+                {
+                    "answer": ""
+                },
+                {
+                    "answer": ""
+                }
+            ]            
+        },
+        {
+            "question": "Canción favorita para llorar",
+            "answers": [
+                {
+                    "answer": "Nobody -Mitski"
+                },
+                {
+                    "answer": "Fuentes de Ortiz - Ed Maverick"
+                },
+                {
+                    "answer": "Fix You - Coldplay"
+                },
+                {
+                    "answer": "No lloro"
+                }
+            ]            
+        },
+        {
+            "question": "¿En qué momento del día te bañas?",
+            "answers": [
+                {
+                    "answer": "En la mañana"
+                },
+                {
+                    "answer": "En la tarde"
+                },
+                {
+                    "answer": "En la noche"
+                },
+                {
+                    "answer": "¿Bañarme?"
+                }
+            ]            
+        },
+        {
+            "question": "¿Qué nombre es más “fresa”?",
+            "answers": [
+                {
+                    "answer": "Santi"
+                },
+                {
+                    "answer": "Juanpa"
+                },
+                {
+                    "answer": "Ana Pao"
+                },
+                {
+                    "answer": "Ana Sof"
+                }
+            ]            
+        }
+    ]
+}

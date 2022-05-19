@@ -67,7 +67,10 @@ const QuizScreen = (props) => {
         renderItem={renderItem}
         extraData={selectedAnswers}
       />
-      <Button onPress={() => (onCalculate(2))} title="Encuentra mi waifu uwu ~" />
+      <View style={styles.endButton} >
+      <Button color='#6fb5de' onPress={() => (onCalculate(2))} title="Encuentra mi waifu uwu ~" />
+      </View>
+      
     </SafeAreaView>
   );
 }
@@ -91,6 +94,12 @@ const styles = StyleSheet.create({
   ansButton: {
     margin: 10,
     width: '90%'
+  },
+  endButton:{
+    width:'80%',
+    alignSelf: 'center',
+    alignContent: 'center',
+    margin:10
   }
 });
 

@@ -18,14 +18,12 @@ const StartQuizScreen = ({onStartGame}) => {
           }}
         />
         <View style={styles.buttonContainer}>
-          <View style={styles.button}>
             <Button
               style={styles.button}
               title="Empezar"
               onPress={() => (onStartGame(1))}
               color={colors.secondary}
             />
-          </View>
         </View>
       </Card>
 
@@ -57,7 +55,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     width: '100%',
-    justifyCOntent: 'center',
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 15
   },
@@ -65,7 +63,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     resizeMode: 'stretch',
-    justifyCOntent: 'center',
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
     alignSelf: 'center'

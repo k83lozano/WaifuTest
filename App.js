@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
 import QuizScreen from './screens/QuizScreen';
 import ResultScreen from './screens/ResultScreen';
@@ -7,6 +7,7 @@ import StartQuizScreen from './screens/StartQuizScreen';
 export default function App() {
 
   let content = <StartQuizScreen></StartQuizScreen>
+  content = <QuizScreen></QuizScreen>
 
   return (
     <View style={styles.container}>

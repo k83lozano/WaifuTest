@@ -1,29 +1,49 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native';
 import QuizScreen from './screens/QuizScreen';
-import QuizScreenTest from './screens/QuizScreenTest';
+// import QuizScreenTest from './screens/QuizScreenTest';
 import ResultScreen from './screens/ResultScreen';
 import StartQuizScreen from './screens/StartQuizScreen';
 
 export default function App() {
+  // json.Questions.map((element, index) => ({ key: index, data: element }))
+  const [data, setData] = useState(undefined);
+  const [selectedAnswers, setSelectedAnswers] = useState([]);
+  const [content, setContent] = useState(undefined);
 
-  let content = <StartQuizScreen></StartQuizScreen>
-  content = <QuizScreen></QuizScreen>
+  // load and parse data
+  useEffect(() => {
+    var json = require('./QuestionsAnswers.json'); //(with path)
+    // console.log('json', json);
+    const stuff = json.Questions.map((elem, index) => ({
+      key: index,
+      question: elem.question,
+      answers: elem.answers.map((answer, ansIdx) => ({
+        key: ansIdx,
+        answer: answer.answer
+      }))
+    }));
+    setData(stuff);
+  }, []);
 
-  var json = require('./QuestionsAnswers.json'); //(with path)
-  console.log('json', json)
-
-  const {Questions : {0 :{ question : quest}}} = json
-
-  console.log('quest', quest)
-
-  for (const quest of json.Questions)
-      console.log('quest', quest.question);
+  useEffect(() => {
+    if (data)
+    {
+      setContent(
+        <QuizScreen
+          data={data}
+        />
+      );
+    }
+  }, [data]);
+  
 
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      {content}
+      { content ? 
+        content :
+        <Text>webos con jamon</Text>
+      }
     </View>
   );
 }

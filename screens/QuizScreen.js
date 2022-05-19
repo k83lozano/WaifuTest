@@ -3,22 +3,136 @@ import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity }
 
 const DATA = [
   {
-    id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-    title: "First Item",
+    question: "¿A qué lugar ficticio te gustaría ir?",
+    id: 1,
+    answers: [
+      {
+          answer: "La Fábrica de Willy Wonka"
+      },
+      {
+          answer: "Fondo de Bikini"
+      },
+      {
+          answer: "La Tierra Media"
+      },
+      {
+          answer: "Tlaxcala"
+      }
+    ]            
   },
   {
-    id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-    title: "Second Item",
+    question: "Si pudieras invitarle unos tacos a un personaje famoso, a quién sería?",
+    id: 2,
+    answers: [
+      {
+          answer: "Zendaya"
+      },
+      {
+          answer: "Genghis Khan"
+      },
+      {
+          answer: "Chabelo"
+      },
+      {
+          answer: "Elvis Presley"
+      }
+    ]           
   },
   {
-    id: "58694a0f-3da1-471f-bd96-145571e29d72",
-    title: "Third Item",
+    question: "Mole favorito",
+    id: 3,
+    answers: [
+      {
+          answer: "Poblano"
+      },
+      {
+          answer: "Negro"
+      },
+      {
+          answer: "Amarillo"
+      },
+      {
+          answer: "Xico"
+      }
+    ]            
   },
+  {
+    question: "¿Cuando vas por un elote o esquite eliges, chile del que pica o del que no pica?",
+    id: 4,
+    answers: [
+      {
+          answer: "Del que pica"
+      },
+      {
+          answer: "Del que no pica"
+      },
+      {
+          answer: ""
+      },
+      {
+          answer: ""
+      }
+    ]            
+  },
+  {
+    question: "Canción favorita para llorar",
+    id: 5,
+    answers: [
+      {
+          answer: "Nobody -Mitski"
+      },
+      {
+          answer: "Fuentes de Ortiz - Ed Maverick"
+      },
+      {
+          answer: "Fix You - Coldplay"
+      },
+      {
+          answer: "No lloro"
+      }
+    ]            
+  },
+  {
+    question: "¿En qué momento del día te bañas?",
+    id: 6,
+    answers: [
+      {
+          answer: "En la mañana"
+      },
+      {
+          answer: "En la tarde"
+      },
+      {
+          answer: "En la noche"
+      },
+      {
+          answer: "¿Bañarme?"
+      }
+    ]            
+  },
+  {
+    question: "¿Qué nombre es más “fresa”?",
+    id: 7,
+    answers: [
+      {
+          answer: "Santi"
+      },
+      {
+          answer: "Juanpa"
+      },
+      {
+          answer: "Ana Pao"
+      },
+      {
+          answer: "Ana Sof"
+      }
+    ]            
+  }
 ];
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-    <Text style={[styles.title, textColor]}>{item.title}</Text>
+    <Text style={[styles.title, textColor]}>{item.question}</Text>
   </TouchableOpacity>
 );
 

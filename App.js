@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
 import QuizScreen from './screens/QuizScreen';
+import QuizScreenTest from './screens/QuizScreenTest';
 import ResultScreen from './screens/ResultScreen';
 import StartQuizScreen from './screens/StartQuizScreen';
 

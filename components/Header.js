@@ -1,24 +1,28 @@
 import React from 'react'
-import { StyleSheet,  Text, View} from 'react-native'
+import { StyleSheet, Text, View } from 'react-native';
+import colors from '../constants/colors';
 
-const Header = () => {
+const Header = ({title}) => {
   return (
     <View style={styles.header}>
-      <Text style={styles.headerTitle}>Waifu Test</Text>
+      <Text style={styles.headerTitle}>{title}</Text>
     </View>
-  )
+  );
 }
+
 const styles = StyleSheet.create({
   header: {
-      width: '100%',
-      height: 70,
-      backgroundColor: 'black',
-      justifyContent: 'center',
-      alignItems: 'center',
+    width: '100%',
+    height: 120,
+    padding: 40,
+    backgroundColor: colors.primary,
+    alignItems: 'center',
+    justifyCOntent: 'center'
   },
   headerTitle: {
-      color: 'white',
-      fontSize: 35,
+    color: colors.background,
+    fontSize: 30
   }
 });
+
 export default Header

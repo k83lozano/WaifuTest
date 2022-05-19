@@ -4,6 +4,8 @@ import QuizScreen from './screens/QuizScreen';
 // import QuizScreenTest from './screens/QuizScreenTest';
 import ResultScreen from './screens/ResultScreen';
 import StartQuizScreen from './screens/StartQuizScreen';
+import colors from './constants/colors';
+import Header from './Components/Header';
 
 export default function App() {
   // json.Questions.map((element, index) => ({ key: index, data: element }))
@@ -51,7 +53,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.background,
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -4,7 +4,7 @@ import { StyleSheet,  Text, View} from 'react-native'
 const Header = () => {
   return (
     <View style={styles.header}>
-      <Text>Waifu Test</Text>
+      <Text style={styles.headerTitle}>Waifu Test</Text>
     </View>
   )
 }

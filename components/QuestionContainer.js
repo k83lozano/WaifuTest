@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react'
 import { View, StyleSheet, Button } from "react-native";
 
-const QuestionContainer = ({children}) => {
-  return <View style={styles.questionContainer}>
+const QuestionContainer = ({children, style}) => {
+  return <View style={[styles.questionContainer, style]}>
     {children}
   </View>
 }
 
 const styles = StyleSheet.create({
     questionContainer: {
-        width: 300,
+        width: '100%',
         margin: 10,
         maxWidth: '80%',
         alignItems: 'center',
@@ -21,11 +21,6 @@ const styles = StyleSheet.create({
         elevation: 5, //Only Android
         padding: 20,
         borderRadius: 10
-    },question:{
-      maxWidth: '80%',
-      alignItems: 'center',
-    },answer:{
-      width:'80%'
     }
 })
 

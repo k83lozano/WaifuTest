@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, Button } from "react-native";
 import { View } from "react-native-web";
+import QuestionContainer from "../components/QuestionContainer";
 
 
 const Question = ({ item, onPress, backgroundColor, textColor, list }) => (
-  <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
+  <QuestionContainer onPress={onPress} style={[styles.item, backgroundColor]}>
     <Text style={[styles.title, textColor]}>{item.question}</Text>
     {list}
-  </TouchableOpacity>
+  </QuestionContainer>
 );
 
 const QuizScreen = (props) => {
@@ -19,7 +20,7 @@ const QuizScreen = (props) => {
   
   const renderItem = ({ item }) => {
     const listItems = item.answers.map((elem) =>
-      <TouchableOpacity key={elem.key}><Text>{elem.answer}</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.ansButton} key={elem.key}><Button title={elem.answer} color='#cb42f5'/></TouchableOpacity>
     );
     
     const backgroundColor = item.key === selectedItems ? "#6e3b6e" : "#f9c2ff";
@@ -60,6 +61,10 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
   },
+  ansButton: {
+    margin:10,
+    width:'90%'
+  }
 });
 
 

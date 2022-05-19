@@ -5,31 +5,30 @@ import QuizScreen from './screens/QuizScreen';
 import ResultScreen from './screens/ResultScreen';
 import StartQuizScreen from './screens/StartQuizScreen';
 import colors from './constants/colors';
-import Header from './Components/Header';
+import Header from './components/Header';
 
 export default function App() {
   // json.Questions.map((element, index) => ({ key: index, data: element }))
   const [data, setData] = useState(undefined);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
-  const [startGame, setStartGame]=useState(0)
-  const [gameState, setGameState] = useState(0)
-const [content, setContent] = useState(undefined);
-  
+  const [gameState, setGameState] = useState(0);
+  const [content, setContent] = useState(undefined);
+
   useEffect(() => {
-    if(data) 
-    { 
+    if (data) {
       if(gameState === 1){
         setContent(<QuizScreen data={data} onCalculate={setGameState} selectedAnswersHook={[selectedAnswers, setSelectedAnswers]}></QuizScreen>)
       }
       else if (gameState === 2) {
-        setContent(<ResultScreen></ResultScreen>)
+        setContent(<ResultScreen selectedAnswers={selectedAnswers}/>)
       }
       else {
         setContent(<StartQuizScreen onStartGame={setGameState}></StartQuizScreen>)
       }
+      // setContent(<ResultScreen selectedAnswers={selectedAnswers} />)
     }
   }, [gameState, data])
-  
+
   // load and parse data
   useEffect(() => {
     var json = require('./QuestionsAnswers.json'); //(with path)
@@ -44,12 +43,12 @@ const [content, setContent] = useState(undefined);
     }));
     setData(stuff);
   }, []);
-  
+
 
   return (
     <View style={styles.container}>
-      <Header title={"Waifu Test"}/>
-      { content ? 
+      <Header title={"Waifu Test"} />
+      {content ?
         content :
         <Text>webos con jamon</Text>
       }

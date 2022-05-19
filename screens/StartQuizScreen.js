@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { View, Image, Button, Text, StyleSheet } from 'react-native'
 import colors from '../constants/colors'
-import Card from '../Components/Card'
+import Card from '../components/Card'
 import QuizScreen from './QuizScreen'
 
 const StartQuizScreen = ({onStartGame}) => {

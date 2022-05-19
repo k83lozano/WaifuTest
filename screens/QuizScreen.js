@@ -1,21 +1,27 @@
-import React, { useState } from "react";
-import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity } from "react-native";
+import React, { useState, useEffect } from "react";
+import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, Button } from "react-native";
+import { View } from "react-native-web";
 
-const Question = ({ item, onPress, backgroundColor, textColor }) => (
-  // TODO
+
+const Question = ({ item, onPress, backgroundColor, textColor, list }) => (
   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
     <Text style={[styles.title, textColor]}>{item.question}</Text>
+    {list}
   </TouchableOpacity>
 );
 
 const QuizScreen = (props) => {
   const { 
     data
-   } = props;
-  
+  } = props;
+    
   const [selectedItems, setSelectedItems] = useState([]);
-
+  
   const renderItem = ({ item }) => {
+    const listItems = item.answers.map((elem) =>
+      <TouchableOpacity key={elem.key}><Text>{elem.answer}</Text></TouchableOpacity>
+    );
+    
     const backgroundColor = item.key === selectedItems ? "#6e3b6e" : "#f9c2ff";
     const color = item.key === selectedItems ? 'white' : 'black';
 
@@ -25,6 +31,7 @@ const QuizScreen = (props) => {
         onPress={() => setSelectedItems(item.id)}
         backgroundColor={{ backgroundColor }}
         textColor={{ color }}
+        list={listItems}
       />
     );
   };

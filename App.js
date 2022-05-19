@@ -19,7 +19,7 @@ const [content, setContent] = useState(undefined);
     if(data) 
     { 
       if(gameState === 1){
-        setContent(<QuizScreen data={data} onCalculate={setGameState}></QuizScreen>)
+        setContent(<QuizScreen data={data} onCalculate={setGameState} selectedAnswersHook={[selectedAnswers, setSelectedAnswers]}></QuizScreen>)
       }
       else if (gameState === 2) {
         setContent(<ResultScreen></ResultScreen>)

@@ -27,20 +27,21 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (data)
-    {
+    if (data && selectedAnswers) {
+      console.log('selectedAnswers', selectedAnswers);
       setContent(
         <QuizScreen
           data={data}
+          selectedAnswersHook={[selectedAnswers, setSelectedAnswers]}
         />
       );
     }
-  }, [data]);
-  
+  }, [data, selectedAnswers]);
+
 
   return (
     <View style={styles.container}>
-      { content ? 
+      {content ?
         content :
         <Text>webos con jamon</Text>
       }

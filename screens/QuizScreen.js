@@ -4,34 +4,56 @@ import { View } from "react-native-web";
 import QuestionContainer from "../components/QuestionContainer";
 
 
-const Question = ({ item, onPress, backgroundColor, textColor, list }) => (
-  <QuestionContainer onPress={onPress} style={[styles.item, backgroundColor]}>
+const Question = ({ item, backgroundColor, textColor, list }) => (
+  <QuestionContainer style={[styles.item, backgroundColor]}>
     <Text style={[styles.title, textColor]}>{item.question}</Text>
     {list}
   </QuestionContainer>
 );
 
 const QuizScreen = (props) => {
-  const { 
-    data
+  const {
+    data,
+    selectedAnswersHook: [selectedAnswers, setSelectedAnswers]
   } = props;
-    
-  const [selectedItems, setSelectedItems] = useState([]);
-  
-  const renderItem = ({ item }) => {
-    const listItems = item.answers.map((elem) =>
-      <TouchableOpacity style={styles.ansButton} key={elem.key}><Button title={elem.answer} color='#cb42f5'/></TouchableOpacity>
+
+  const renderItem = ({ item: question }) => {
+    // setSelectedItems(
+    //   [...selectedItems, {questionId: item.key, selectedAnswer: undefined } ]
+    // );
+
+    const listItems = question.answers.map((elem) =>
+      <TouchableOpacity style={styles.ansButton} key={elem.key}>
+        <Button
+          title={elem.answer}
+          color='#cb42f5'
+          onPress={() => {
+            if (selectedAnswers.some((item) => item.questionId === question.key)) {
+              const arrCopy = selectedAnswers.slice();
+              arrCopy.splice(
+                arrCopy.findIndex((item) => item.questionId === question.key),
+                1,
+                { questionId: question.key, selectedAnswer: elem.key }
+              );
+              setSelectedAnswers(arrCopy);
+            } else {
+              setSelectedAnswers(
+                [...selectedAnswers, { questionId: question.key, selectedAnswer: elem.key }]
+              );
+            }
+          }}
+        />
+      </TouchableOpacity>
     );
-    
-    const backgroundColor = item.key === selectedItems ? "#6e3b6e" : "#f9c2ff";
-    const color = item.key === selectedItems ? 'white' : 'black';
+
+    // const backgroundColor = item.key === selectedItems ? "#6e3b6e" : "#f9c2ff";
+    // const color = item.key === selectedItems ? 'white' : 'black';
 
     return (
       <Question
-        item={item}
-        onPress={() => setSelectedItems(item.id)}
-        backgroundColor={{ backgroundColor }}
-        textColor={{ color }}
+        item={question}
+        // backgroundColor={{ backgroundColor }}
+        // textColor={{ color }}
         list={listItems}
       />
     );
@@ -42,7 +64,7 @@ const QuizScreen = (props) => {
       <FlatList
         data={data}
         renderItem={renderItem}
-        extraData={selectedItems}
+        extraData={selectedAnswers}
       />
     </SafeAreaView>
   );
@@ -54,19 +76,19 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight || 0,
   },
   item: {
-    alignSelf:'center',
-    alignContent:'center',
+    alignSelf: 'center',
+    alignContent: 'center',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
   },
   title: {
-    
+
     fontSize: 32,
   },
   ansButton: {
-    margin:10,
-    width:'90%'
+    margin: 10,
+    width: '90%'
   }
 });
 

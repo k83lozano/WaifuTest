@@ -1,9 +1,13 @@
 import React from 'react'
+import { useState } from 'react'
 import { View, Image, Button, Text, StyleSheet } from 'react-native'
 import colors from '../constants/colors'
 import Card from '../Components/Card'
+import QuizScreen from './QuizScreen'
 
-const StartQuizScreen = () => {
+const StartQuizScreen = ({onStartGame}) => {
+
+
   return (
     <View style={styles.screen}>
       <Card>
@@ -17,8 +21,8 @@ const StartQuizScreen = () => {
           <View style={styles.button}>
             <Button
               style={styles.button}
-              title="Start Quiz"
-              onPress={() => ([])}
+              title="Empezar"
+              onPress={() => (onStartGame(1))}
               color={colors.secondary}
             />
           </View>
@@ -48,7 +52,7 @@ const styles = StyleSheet.create({
   button: {
     width: 100,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   buttonContainer: {
     flexDirection: 'row',

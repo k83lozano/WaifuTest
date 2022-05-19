@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native';
 import QuizScreen from './screens/QuizScreen';
 import ResultScreen from './screens/ResultScreen';
@@ -8,7 +9,14 @@ import Header from './Components/Header';
 
 export default function App() {
 
-  let content = <StartQuizScreen></StartQuizScreen>
+  const [startGame, setStartGame]=useState(0)
+
+
+  let content = <StartQuizScreen onStartGame={setStartGame}></StartQuizScreen>
+  if(startGame === 1) 
+  { 
+    content = <QuizScreen></QuizScreen>
+  }
 
   return (
     <View style={styles.container}>

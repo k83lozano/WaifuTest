@@ -2,154 +2,119 @@
     "Questions": [
         {
             "question": "¿A qué lugar ficticio te gustaría ir?",
-            "qID": 101,
             "answers": [
                 {
-                    "id": 11,
                     "answer": "La Fábrica de Willy Wonka"
                 },
                 {
-                    "id": 12,
                     "answer": "Fondo de Bikini"
                 },
                 {
-                    "id": 13,
                     "answer": "La Tierra Media"
                 },
                 {
-                    "id": 14,
                     "answer": "Tlaxcala"
                 }
             ]            
         },
         {
             "question": "Si pudieras invitarle unos tacos a un personaje famoso, a quién sería?",
-            "qID": 102,
             "answers": [
                 {
-                    "id": 21,
                     "answer": "Zendaya"
                 },
                 {
-                    "id": 22,
                     "answer": "Genghis Khan"
                 },
                 {
-                    "id": 23,
                     "answer": "Chabelo"
                 },
                 {
-                    "id": 24,
                     "answer": "Elvis Presley"
                 }
             ]           
         },
         {
             "question": "Mole favorito",
-            "qID": 103,
             "answers": [
                 {
-                    "id": 31,
                     "answer": "Poblano"
                 },
                 {
-                    "id": 32,
                     "answer": "Negro"
                 },
                 {
-                    "id": 33,
                     "answer": "Amarillo"
                 },
                 {
-                    "id": 34,
                     "answer": "Xico"
                 }
             ]            
         },
         {
             "question": "¿Cuando vas por un elote o esquite eliges, chile del que pica o del que no pica?",
-            "qID": 104,
             "answers": [
                 {
-                    "id": 41,
                     "answer": "Del que pica"
                 },
                 {
-                    "id": 42,
                     "answer": "Del que no pica"
                 },
                 {
-                    "id": 43,
                     "answer": ""
                 },
                 {
-                    "id": 44,
                     "answer": ""
                 }
             ]            
         },
         {
             "question": "Canción favorita para llorar",
-            "qID": 105,
             "answers": [
                 {
-                    "id": 51,
                     "answer": "Nobody -Mitski"
                 },
                 {
-                    "id": 52,
                     "answer": "Fuentes de Ortiz - Ed Maverick"
                 },
                 {
-                    "id": 53,
                     "answer": "Fix You - Coldplay"
                 },
                 {
-                    "id": 54,
                     "answer": "No lloro"
                 }
             ]            
         },
         {
             "question": "¿En qué momento del día te bañas?",
-            "qID": 106,
             "answers": [
                 {
-                    "id": 61,
                     "answer": "En la mañana"
                 },
                 {
-                    "id": 62,
                     "answer": "En la tarde"
                 },
                 {
-                    "id": 63,
                     "answer": "En la noche"
                 },
                 {
-                    "id": 64,
                     "answer": "¿Bañarme?"
                 }
             ]            
         },
         {
             "question": "¿Qué nombre es más “fresa”?",
-            "qID": 107,
             "answers": [
                 {
-                    "id": 71,
                     "answer": "Santi"
                 },
                 {
-                    "id": 72,
                     "answer": "Juanpa"
                 },
                 {
-                    "id": 73,
                     "answer": "Ana Pao"
                 },
                 {
-                    "id": 74,
                     "answer": "Ana Sof"
                 }
             ]            

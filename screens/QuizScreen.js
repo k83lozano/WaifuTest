@@ -54,11 +54,14 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight || 0,
   },
   item: {
+    alignSelf:'center',
+    alignContent:'center',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
   },
   title: {
+    
     fontSize: 32,
   },
   ansButton: {

@@ -13,6 +13,8 @@ const styles = StyleSheet.create({
         margin: 10,
         maxWidth: '80%',
         alignItems: 'center',
+        alignSelf:'center',
+    alignContent:'center',
         shadowColor: 'black',
         shadowOffset: {width: 0, height: 2},
         shadowOpacity: .26,

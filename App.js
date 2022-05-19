@@ -11,8 +11,25 @@ export default function App() {
   // json.Questions.map((element, index) => ({ key: index, data: element }))
   const [data, setData] = useState(undefined);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
-  const [content, setContent] = useState(undefined);
-
+  const [startGame, setStartGame]=useState(0)
+  const [gameState, setGameState] = useState(0)
+const [content, setContent] = useState(undefined);
+  
+  useEffect(() => {
+    if(data) 
+    { 
+      if(gameState === 1){
+        setContent(<QuizScreen data={data} onCalculate={setGameState}></QuizScreen>)
+      }
+      else if (gameState === 2) {
+        setContent(<ResultScreen></ResultScreen>)
+      }
+      else {
+        setContent(<StartQuizScreen onStartGame={setGameState}></StartQuizScreen>)
+      }
+    }
+  }, [gameState, data])
+  
   // load and parse data
   useEffect(() => {
     var json = require('./QuestionsAnswers.json'); //(with path)
@@ -27,21 +44,11 @@ export default function App() {
     }));
     setData(stuff);
   }, []);
-
-  useEffect(() => {
-    if (data)
-    {
-      setContent(
-        <QuizScreen
-          data={data}
-        />
-      );
-    }
-  }, [data]);
   
 
   return (
     <View style={styles.container}>
+      <Header title={"Waifu Test"}/>
       { content ? 
         content :
         <Text>webos con jamon</Text>

@@ -11,10 +11,7 @@ const Question = ({ item, onPress, backgroundColor, textColor, list }) => (
   </QuestionContainer>
 );
 
-const QuizScreen = (props) => {
-  const { 
-    data
-  } = props;
+const QuizScreen = ({ data, onCalculate }) => {
     
   const [selectedItems, setSelectedItems] = useState([]);
   
@@ -44,6 +41,7 @@ const QuizScreen = (props) => {
         renderItem={renderItem}
         extraData={selectedItems}
       />
+      <Button onPress={() => (onCalculate(2))} title="Encuentra mi waifu uwu ~"/>
     </SafeAreaView>
   );
 }

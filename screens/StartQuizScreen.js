@@ -14,7 +14,7 @@ const StartQuizScreen = ({onStartGame}) => {
         <Image
           style={styles.image}
           source={{
-            uri: 'http://images7.memedroid.com/images/UPLOADED894/5f0502441774c.jpeg',
+            uri: 'https://i1.wp.com/www.senpai.com.mx/wp-content/uploads/2021/06/Las-waifus-de-Fairy-Tail-Nanatsu-no-Taizai-Kanojo-Okarishimasu-y-mas-se-unen-en-un-solo-juego-para-smartphones.jpg?fit=1280%2C720&ssl=1',
           }}
         />
         <View style={styles.buttonContainer}>
@@ -60,8 +60,8 @@ const styles = StyleSheet.create({
     padding: 15
   },
   image: {
-    width: 150,
-    height: 150,
+    width: 400,
+    height: 300,
     resizeMode: 'stretch',
     justifyContent: 'center',
     alignItems: 'center',

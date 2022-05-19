@@ -10,9 +10,10 @@ const Card = ({children, style}) => {
 
 const styles=StyleSheet.create({
     card:{
-        width:300,
+        width:100,
+        height: 600,
         margin:10,
-        width:'100%',
+        width:'150%',
         backgroundColor: colors.tertiary,
         elevation: 5,
         padding: 20,

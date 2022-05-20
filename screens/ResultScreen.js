@@ -56,8 +56,8 @@ const ResultScreen = (props) => {
         source={{ uri: charURI, }}
       />
       <Text style={styles.present}>Tu waifu ideal es:</Text>
-      <Text style={styles.name}>{charName}</Text>
-      <Text>{animeName}</Text>
+      <Text style={styles.waifuName}>{charName}</Text>
+      <Text style={styles.animeName}>{animeName}</Text>
       <Button onPress={() => (onRestartQuiz())} title='Reiniciar el Quiz' color={colors.secondary}></Button>
       </View>
   )
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     marginTop: 0,
   },
   tinyImg: {
+    marginTop: 30,
     width: 300,
     height: 300,
     resizeMode: 'contain',
@@ -80,11 +81,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
   },
-  name: {
-    fontSize: 20,
+  waifuName: {
+    fontSize: 22,
     color: colors.primary,
     fontWeight: "bold",
     textAlign: 'center',
     margin: 10,
+  },
+  animeName: {
+    fontsize: 17,
+    fontStyle: 'italic',
+    textAlign: 'center',
+    margin: 10,
+    color: colors.secondary
   }
 })

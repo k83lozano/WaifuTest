@@ -27,7 +27,7 @@ export default function App() {
       }
       // setContent(<ResultScreen selectedAnswers={selectedAnswers} />)
     }
-  }, [gameState, data])
+  }, [gameState, data, selectedAnswers])
 
   // load and parse data
   useEffect(() => {

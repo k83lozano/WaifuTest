@@ -18,28 +18,28 @@ const QuizScreen = (props) => {
     onCalculate
   } = props;
 
-  const renderItem = ({ item: question }) => {
+  const renderItem = ({ item }) => {
     // setSelectedItems(
     //   [...selectedItems, {questionId: item.key, selectedAnswer: undefined } ]
     // );
 
-    const listItems = question.answers.map((elem) =>
+    const listItems = item.answers.map((elem) =>
       <TouchableOpacity style={styles.ansButton} key={elem.key}>
         <Button
           title={elem.answer}
           color='#cb42f5'
           onPress={() => {
-            if (selectedAnswers.some((item) => item.questionId === question.key)) {
+            if (selectedAnswers.some((iter) => iter.questionId === item.key)) {
               const arrCopy = selectedAnswers.slice();
               arrCopy.splice(
-                arrCopy.findIndex((item) => item.questionId === question.key),
+                arrCopy.findIndex((iter) => iter.questionId === item.key),
                 1,
-                { questionId: question.key, selectedAnswer: elem.key }
+                { questionId: item.key, selectedAnswer: elem.key }
               );
               setSelectedAnswers(arrCopy);
             } else {
               setSelectedAnswers(
-                [...selectedAnswers, { questionId: question.key, selectedAnswer: elem.key }]
+                [...selectedAnswers, { questionId: item.key, selectedAnswer: elem.key }]
               );
             }
           }}
@@ -52,7 +52,7 @@ const QuizScreen = (props) => {
 
     return (
       <Question
-        item={question}
+        item={item}
         // backgroundColor={{ backgroundColor }}
         // textColor={{ color }}
         list={listItems}

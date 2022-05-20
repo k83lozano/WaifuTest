@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, Button } from 'react-native'
 import { deserialise } from 'kitsu-core'
 import colors from '../constants/colors';
 import QuestionContainer from '../components/QuestionContainer';
 
 const ResultScreen = (props) => {
   const {
-    selectedAnswers
+    selectedAnswers,
+    onRestartQuiz,
   } = props;
   const [animeData, setAnimeData] = useState(undefined);
   const [charName, setCharName] = useState("how to rotate text in mspaint");
@@ -49,15 +50,14 @@ const ResultScreen = (props) => {
 
   return (
     <View>
-      <QuestionContainer>
       <Image
         style={styles.tinyImg}
         source={{ uri: charURI, }}
       />
       <Text style={styles.present}>Tu waifu ideal es:</Text>
       <Text style={styles.name}>{charName}</Text>
-      </QuestionContainer>
-    </View>
+      <Button onPress={() => (onRestartQuiz())} title='Reiniciar el Quiz' color={colors.secondary}></Button>
+      </View>
   )
 }
 

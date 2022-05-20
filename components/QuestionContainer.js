@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         maxWidth: '80%',
         alignItems: 'center',
         alignSelf:'center',
-    alignContent:'center',
+        alignContent:'center',
         shadowColor: 'black',
         shadowOffset: {width: 0, height: 2},
         shadowOpacity: .26,

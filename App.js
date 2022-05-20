@@ -20,7 +20,7 @@ export default function App() {
         setContent(<QuizScreen data={data} onCalculate={setGameState} selectedAnswersHook={[selectedAnswers, setSelectedAnswers]}></QuizScreen>)
       }
       else if (gameState === 2) {
-        setContent(<ResultScreen selectedAnswers={selectedAnswers}/>)
+        setContent(<ResultScreen selectedAnswers={selectedAnswers} onRestartQuiz={restartQuiz}/>)
       }
       else {
         setContent(<StartQuizScreen onStartGame={setGameState}></StartQuizScreen>)
@@ -28,6 +28,12 @@ export default function App() {
       // setContent(<ResultScreen selectedAnswers={selectedAnswers} />)
     }
   }, [gameState, data, selectedAnswers])
+
+  const restartQuiz = () => {
+    console.log("Restart");
+    setSelectedAnswers([]);
+    setGameState(0);
+  }
 
   // load and parse data
   useEffect(() => {

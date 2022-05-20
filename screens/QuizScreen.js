@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     width: '90%'
   },
   endButton:{
-    width:'80%',
+    width:'60%',
     alignSelf: 'center',
     alignContent: 'center',
     margin:10

@@ -9,7 +9,8 @@ const QuestionContainer = ({children, style}) => {
 
 const styles = StyleSheet.create({
     questionContainer: {
-        width: '100%',
+        width: '60%',
+        padding: 10,
         margin: 10,
         maxWidth: '80%',
         alignItems: 'center',

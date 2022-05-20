@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 import { deserialise } from 'kitsu-core'
+import colors from '../constants/colors';
+import QuestionContainer from '../components/QuestionContainer';
 
 const ResultScreen = (props) => {
   const { 
@@ -41,11 +43,14 @@ const ResultScreen = (props) => {
 
   return (
     <View>
+      <QuestionContainer>
       <Image
         style={styles.tinyImg}
         source={{uri: charURI, }}
       />
-      <Text>{charName}</Text>
+      <Text style={styles.present}>Tu waifu ideal es:</Text>
+      <Text style={styles.name}>{charName}</Text>
+      </QuestionContainer>
     </View>
   )
 }
@@ -54,8 +59,20 @@ export default ResultScreen
 
 const styles = StyleSheet.create({
   tinyImg: {
-    width: 250,
-    height: 250,
+    width: 300,
+    height: 300,
     resizeMode: 'contain',
   },
+  present:{
+    fontSize: 15,
+    textAlign: 'center',
+    margin: 10,
+  },
+  name: {
+    fontSize: 20,
+    color: colors.primary,
+    fontWeight: "bold",
+    textAlign: 'center',
+    margin: 10,
+  }
 })

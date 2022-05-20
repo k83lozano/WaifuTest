@@ -49,7 +49,7 @@ const ResultScreen = (props) => {
 
 
   return (
-    <View>
+    <View style={styles.container}>
       <Image
         style={styles.tinyImg}
         source={{ uri: charURI, }}
@@ -64,6 +64,10 @@ const ResultScreen = (props) => {
 export default ResultScreen
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 0,
+  },
   tinyImg: {
     width: 300,
     height: 300,

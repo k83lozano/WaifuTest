@@ -38,7 +38,6 @@ export default function App() {
   // load and parse data
   useEffect(() => {
     var json = require('./QuestionsAnswers.json'); //(with path)
-    // console.log('json', json);
     const stuff = json.Questions.map((elem, index) => ({
       key: index,
       question: elem.question,

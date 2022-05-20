@@ -18,22 +18,26 @@ const ResultScreen = (props) => {
     if (response.status == 200) {
       const json = await response.json();
       const kitsu = deserialise(json);
-      var charID = id;
 
-      while (kitsu.data.characters.data[charID] === undefined) {
-        charID = Math.floor(charID / 2);
+      if (kitsu.data.characters.data.length > 0) {
+        var charID = id;
+
+        while (kitsu.data.characters.data[charID] === undefined) {
+          charID = Math.floor(charID / 2);
+        }
+
+        const charData = kitsu.data.characters.data[charID].character.data;
+        console.log('charData', charData);
+        setCharName(charData.name);
+        setAnimeName(kitsu.data.canonicalTitle);
+        setCharURI(charData.image.original);
+        return;
       }
-      
-      const charData = kitsu.data.characters.data[charID].character.data;
-      console.log('charData', charData);
-      setCharName(charData.name);
-      setAnimeName(kitsu.data.canonicalTitle);
-      setCharURI(charData.image.original);
-    } else {
-      var newId = id.toString();
-      newId = parseInt(newId.slice(0, 1)) + parseInt(newId.slice(1));
-      getAnime(newId);
     }
+    // fallback
+    var newId = id.toString();
+    newId = parseInt(newId.slice(0, 1)) + parseInt(newId.slice(1));
+    getAnime(newId);
   }
 
   useEffect(() => {
@@ -59,7 +63,7 @@ const ResultScreen = (props) => {
       <Text style={styles.waifuName}>{charName}</Text>
       <Text style={styles.animeName}>{animeName}</Text>
       <Button onPress={() => (onRestartQuiz())} title='Reiniciar el Quiz' color={colors.secondary}></Button>
-      </View>
+    </View>
   )
 }
 
@@ -76,7 +80,7 @@ const styles = StyleSheet.create({
     height: 300,
     resizeMode: 'contain',
   },
-  present:{
+  present: {
     fontSize: 15,
     textAlign: 'center',
     margin: 10,

@@ -18,28 +18,28 @@ const QuizScreen = (props) => {
     onCalculate
   } = props;
 
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item: question }) => {
     // setSelectedItems(
     //   [...selectedItems, {questionId: item.key, selectedAnswer: undefined } ]
     // );
 
-    const listItems = item.answers.map((elem) =>
+    const listItems = question.answers.map((elem) =>
       <TouchableOpacity style={styles.ansButton} key={elem.key}>
         <Button
           title={elem.answer}
-          color='#cb42f5'
+          color={selectedAnswers.some(iter => (iter.questionId == question.key) && (iter.selectedAnswer === elem.key)) ? '#83329c' : '#cb42f5'}
           onPress={() => {
-            if (selectedAnswers.some((iter) => iter.questionId === item.key)) {
+            if (selectedAnswers.some((iter) => iter.questionId === question.key)) {
               const arrCopy = selectedAnswers.slice();
               arrCopy.splice(
-                arrCopy.findIndex((iter) => iter.questionId === item.key),
+                arrCopy.findIndex((iter) => iter.questionId === question.key),
                 1,
-                { questionId: item.key, selectedAnswer: elem.key }
+                { questionId: question.key, selectedAnswer: elem.key }
               );
               setSelectedAnswers(arrCopy);
             } else {
               setSelectedAnswers(
-                [...selectedAnswers, { questionId: item.key, selectedAnswer: elem.key }]
+                [...selectedAnswers, { questionId: question.key, selectedAnswer: elem.key }]
               );
             }
           }}
@@ -52,7 +52,7 @@ const QuizScreen = (props) => {
 
     return (
       <Question
-        item={item}
+        item={question}
         // backgroundColor={{ backgroundColor }}
         // textColor={{ color }}
         list={listItems}
@@ -68,9 +68,9 @@ const QuizScreen = (props) => {
         extraData={selectedAnswers}
       />
       <View style={styles.endButton} >
-      <Button color='#6fb5de' onPress={() => (onCalculate(2))} title="Encuentra mi waifu uwu ~" />
+        <Button color='#6fb5de' onPress={() => (onCalculate(2))} title="Encuentra mi waifu uwu ~" />
       </View>
-      
+
     </SafeAreaView>
   );
 }
@@ -95,11 +95,11 @@ const styles = StyleSheet.create({
     margin: 10,
     width: '90%'
   },
-  endButton:{
-    width:'60%',
+  endButton: {
+    width: '60%',
     alignSelf: 'center',
     alignContent: 'center',
-    margin:10
+    margin: 10
   }
 });
 

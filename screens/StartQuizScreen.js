@@ -40,8 +40,10 @@ const styles = StyleSheet.create({
   },
   screen: {
     flex: 1,
+    flexDirection: 'row',
     padding: 10,
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   title: {
     fontSize: 30,
@@ -60,13 +62,8 @@ const styles = StyleSheet.create({
     padding: 15
   },
   image: {
-    width: 400,
-    height: 300,
-    resizeMode: 'stretch',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-    alignSelf: 'center'
+    height: '70%',
+    width: '100%',
   }
 });
 

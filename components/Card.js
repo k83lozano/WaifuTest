@@ -10,17 +10,14 @@ const Card = ({children, style}) => {
 
 const styles=StyleSheet.create({
     card:{
-        width:100,
-        height: 600,
-        margin:10,
-        width:'150%',
+        height: '100%',
+        width:'250%',
+        padding: 20,
         backgroundColor: colors.tertiary,
         elevation: 5,
-        padding: 20,
         borderRadius: 10,
         alignItems:'center',
         justifyContent:'center',
-        alignSelf: 'center'
     }
 })
 

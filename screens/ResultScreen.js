@@ -9,8 +9,8 @@ const ResultScreen = (props) => {
     selectedAnswers,
     onRestartQuiz,
   } = props;
-  const [animeData, setAnimeData] = useState(undefined);
   const [charName, setCharName] = useState("how to rotate text in mspaint");
+  const [animeName, setAnimeName] = useState(undefined);
   const [charURI, setCharURI] = useState(undefined);
 
   const getAnime = async (id) => {
@@ -27,6 +27,7 @@ const ResultScreen = (props) => {
       const charData = kitsu.data.characters.data[charID].character.data;
       console.log('charData', charData);
       setCharName(charData.name);
+      setAnimeName(kitsu.data.canonicalTitle);
       setCharURI(charData.image.original);
     } else {
       var newId = id.toString();
@@ -56,6 +57,7 @@ const ResultScreen = (props) => {
       />
       <Text style={styles.present}>Tu waifu ideal es:</Text>
       <Text style={styles.name}>{charName}</Text>
+      <Text>{animeName}</Text>
       <Button onPress={() => (onRestartQuiz())} title='Reiniciar el Quiz' color={colors.secondary}></Button>
       </View>
   )
